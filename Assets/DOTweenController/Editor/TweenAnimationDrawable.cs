@@ -63,6 +63,9 @@ namespace DOTWeenControllerClasses.Editor
                 case TweenAnimationType.Invoke:
                     DrawInvokeFade(position, property, label);
                     break;
+                case TweenAnimationType.TransformScaleVector:
+                    DrawTransformScaleVector(position, property, label);
+                    break;
                 default:
                     break;
             }
@@ -113,6 +116,14 @@ namespace DOTWeenControllerClasses.Editor
         private void DrawInvokeFade(Rect position, SerializedProperty property, GUIContent label)
         {
             DrawField(1, "m_UnityEvent", "Event", 80f, property, position);
+        }
+
+        private void DrawTransformScaleVector(Rect position, SerializedProperty property, GUIContent label)
+        {
+            DrawField(1, "m_TransformTarget", "Target", 80f, property, position);
+            DrawField(2, "m_Vector3InitValue", "Init value", 80f, property, position);
+            DrawField(3, "m_Vector3TargetValue", "Target value", 80f, property, position);
+            DrawField(4, "m_DurationValue", "Duration", 80f, property, position);
         }
     }
 }

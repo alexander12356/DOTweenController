@@ -24,6 +24,7 @@ public class Sample : MonoBehaviour
             Append(m_DOTWeenController.Play("Fading")).
             Append(m_DOTWeenController.Play("CanvasGroupAppear")).
             Append(m_DOTWeenController.Play("ImageFading")).
-            AppendCallback(() => m_DOTWeenController.Invoke("InvokeImageNew"));
+            AppendCallback(() => m_DOTWeenController.Invoke("InvokeImageNew")).
+            Append(m_DOTWeenController.Play("ScaleImageNew"));
     }
 }

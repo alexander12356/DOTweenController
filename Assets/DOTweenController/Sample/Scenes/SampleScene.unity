@@ -499,6 +499,35 @@ MonoBehaviour:
       m_Vector3TargetValue: {x: -872, y: 447, z: 0}
       m_DurationValue: 1
       m_Ease: 6
+  - Id: ScaleImageNew
+    Tweener:
+      m_Type: 6
+      m_CanvasGroupTarget: {fileID: 382181711}
+      m_TransformTarget: {fileID: 2126333123}
+      m_RectTransformTarget: {fileID: 1429224777}
+      m_ImageTarget: {fileID: 1429224778}
+      m_UnityEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2126333122}
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_FloatInitValue: 1
+      m_FloatTargetValue: 0
+      m_Vector3InitValue: {x: 1, y: 1, z: 1}
+      m_Vector3TargetValue: {x: 4, y: 2, z: 2}
+      m_DurationValue: 1
+      m_Ease: 6
 --- !u!114 &382181710
 MonoBehaviour:
   m_ObjectHideFlags: 0

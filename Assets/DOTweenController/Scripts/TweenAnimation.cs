@@ -67,6 +67,11 @@ namespace DOTWeenControllerClasses
                 {
                     InitAction = InitTransformScale,
                     DoFunc = DoTransformScale
+                },
+                [TweenAnimationType.TransformScaleVector] = new AnimationPattern()
+                {
+                    InitAction = InitTransformScaleVector,
+                    DoFunc = DOTransformScaleVector
                 }
             };
         }
@@ -94,6 +99,7 @@ namespace DOTWeenControllerClasses
         RectTransformLocalMove,
         CanvasGroupFade,
         ImageFade,
-        Invoke
+        Invoke,
+        TransformScaleVector
     }
 }
