@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 using DG.Tweening;
 
@@ -26,6 +27,7 @@ namespace DOTWeenControllerClasses
         [SerializeField] private Transform m_TransformTarget = null;
         [SerializeField] private RectTransform m_RectTransformTarget = null;
         [SerializeField] private Image m_ImageTarget = null;
+        [SerializeField] private UnityEvent m_UnityEvent = null;
 
         // Params
         [SerializeField] private float m_FloatInitValue = 0f;
@@ -78,6 +80,11 @@ namespace DOTWeenControllerClasses
         {
             return m_AnimationPatterns[m_Type].DoFunc().SetEase(m_Ease);
         }
+
+        public void Invoke()
+        {
+            m_UnityEvent?.Invoke();
+        }
     }
 
     public enum TweenAnimationType
@@ -86,6 +93,7 @@ namespace DOTWeenControllerClasses
         TransformMoving,
         RectTransformLocalMove,
         CanvasGroupFade,
-        ImageFade
+        ImageFade,
+        Invoke
     }
 }

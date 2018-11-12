@@ -48,5 +48,14 @@ namespace DOTWeenControllerClasses
             }
             return m_AnimationDictionary[id].DoAnimate();
         }
+
+        public void Invoke(string id)
+        {
+            if (!m_AnimationDictionary.ContainsKey(id))
+            {
+                return;
+            }
+            m_AnimationDictionary[id].Invoke();
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace DOTWeenControllerClasses.Editor
     {
         private float m_FieldHeight = 18f;
         private float m_VerticalSpacing = 22f;
+        private float m_FieldWidth = 100f;
 
         private TweenAnimationType GetTweenAnimationType(SerializedProperty property)
         {
@@ -17,7 +18,7 @@ namespace DOTWeenControllerClasses.Editor
 
         private void DrawField(int index, string fieldName, string labelName, float labelWidth, SerializedProperty property, Rect position)
         {
-            var fieldRect = new Rect(position.x + labelWidth, position.y + (index * m_VerticalSpacing), position.width, m_FieldHeight);
+            var fieldRect = new Rect(position.x + labelWidth, position.y + (index * m_VerticalSpacing), position.width - m_FieldWidth, m_FieldHeight);
             var labelRect = new Rect(position.x, position.y + (index * m_VerticalSpacing), position.width, m_FieldHeight);
 
             EditorGUI.LabelField(labelRect, labelName);
@@ -58,6 +59,9 @@ namespace DOTWeenControllerClasses.Editor
                     break;
                 case TweenAnimationType.ImageFade:
                     DrawImageFade(position, property, label);
+                    break;
+                case TweenAnimationType.Invoke:
+                    DrawInvokeFade(position, property, label);
                     break;
                 default:
                     break;
@@ -104,6 +108,11 @@ namespace DOTWeenControllerClasses.Editor
             DrawField(2, "m_FloatInitValue", "Init value", 80f, property, position);
             DrawField(3, "m_FloatTargetValue", "Target value", 80f, property, position);
             DrawField(4, "m_DurationValue", "Duration", 80f, property, position);
+        }
+
+        private void DrawInvokeFade(Rect position, SerializedProperty property, GUIContent label)
+        {
+            DrawField(1, "m_UnityEvent", "Event", 80f, property, position);
         }
     }
 }
