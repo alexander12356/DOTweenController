@@ -14,7 +14,7 @@ namespace DOTWeenControllerClasses
 
         private Tweener DoTransformMoving()
         {
-            return m_TransformTarget.DOMove(m_Vector3TargetValue, m_DurationValue).SetEase(m_Ease);
+            return m_TransformTarget.DOMove(m_Vector3TargetValue, m_DurationValue);
         }
     }
 }

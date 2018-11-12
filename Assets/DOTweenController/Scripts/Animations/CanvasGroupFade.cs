@@ -7,9 +7,14 @@ namespace DOTWeenControllerClasses
     /// </summary>
     public partial class TweenAnimation
     {
+        private void InitFadeCanvasGroup()
+        {
+            m_CanvasGroupTarget.alpha = m_FloatInitValue;
+        }
+
         private Tweener DoFadeCanvasGroup()
         {
-            return m_CanvasGroupTarget.DOFade(m_FloatTargetValue, m_DurationValue).SetEase(m_Ease);
+            return m_CanvasGroupTarget.DOFade(m_FloatTargetValue, m_DurationValue);
         }
     }
 }

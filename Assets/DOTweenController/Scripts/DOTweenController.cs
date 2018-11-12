@@ -26,8 +26,18 @@ namespace DOTWeenControllerClasses
 
             for (int i = 0; i < m_Animations.Length; i++)
             {
+                m_Animations[i].Tweener.Setup();
                 m_AnimationDictionary.Add(m_Animations[i].Id, m_Animations[i].Tweener);
             }
+        }
+
+        public void Init(string id)
+        {
+            if (!m_AnimationDictionary.ContainsKey(id))
+            {
+                return;
+            }
+            m_AnimationDictionary[id].Init();
         }
 
         public Tweener Play(string id)

@@ -16,7 +16,7 @@ namespace DOTWeenControllerClasses
 
         private Tweener DoTransformScale()
         {
-            return m_TransformTarget.DOScale(m_FloatTargetValue, m_DurationValue).SetEase(m_Ease);
+            return m_TransformTarget.DOScale(m_FloatTargetValue, m_DurationValue);
         }
     }
 }

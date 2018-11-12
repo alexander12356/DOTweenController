@@ -56,6 +56,9 @@ namespace DOTWeenControllerClasses.Editor
                 case TweenAnimationType.CanvasGroupFade:
                     DrawCanvasGroupFade(position, property, label);
                     break;
+                case TweenAnimationType.ImageFade:
+                    DrawImageFade(position, property, label);
+                    break;
                 default:
                     break;
             }
@@ -90,6 +93,14 @@ namespace DOTWeenControllerClasses.Editor
         private void DrawCanvasGroupFade(Rect position, SerializedProperty property, GUIContent label)
         {
             DrawField(1, "m_CanvasGroupTarget", "Target", 80f, property, position);
+            DrawField(2, "m_FloatInitValue", "Init value", 80f, property, position);
+            DrawField(3, "m_FloatTargetValue", "Target value", 80f, property, position);
+            DrawField(4, "m_DurationValue", "Duration", 80f, property, position);
+        }
+
+        private void DrawImageFade(Rect position, SerializedProperty property, GUIContent label)
+        {
+            DrawField(1, "m_ImageTarget", "Target", 80f, property, position);
             DrawField(2, "m_FloatInitValue", "Init value", 80f, property, position);
             DrawField(3, "m_FloatTargetValue", "Target value", 80f, property, position);
             DrawField(4, "m_DurationValue", "Duration", 80f, property, position);

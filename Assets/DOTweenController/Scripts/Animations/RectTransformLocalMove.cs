@@ -7,9 +7,14 @@ namespace DOTWeenControllerClasses
     /// </summary>
     public partial class TweenAnimation  
     {
+        private void InitRectTransformLocalMove()
+        {
+            m_RectTransformTarget.localPosition = m_Vector3InitValue;
+        }
+
         private Tweener DoRectTransformLocalMove()
         {
-            return m_RectTransformTarget.DOLocalMove(m_Vector3TargetValue, m_DurationValue).SetEase(m_Ease);
+            return m_RectTransformTarget.DOLocalMove(m_Vector3TargetValue, m_DurationValue);
         }
     }
 }

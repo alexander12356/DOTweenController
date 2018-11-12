@@ -21,6 +21,8 @@ public class Sample : MonoBehaviour
             Append(m_DOTWeenController.Play("MoveOne")).
             Join(m_DOTWeenController.Play("Scaling")).
             Append(m_DOTWeenController.Play("MoveTwo")).
-            Append(m_DOTWeenController.Play("Fading"));
+            Append(m_DOTWeenController.Play("Fading")).
+            Append(m_DOTWeenController.Play("CanvasGroupAppear")).
+            Append(m_DOTWeenController.Play("ImageFading"));
     }
 }
